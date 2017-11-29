@@ -1,0 +1,8 @@
+Para executar o programa, basta rodar o arquivo script.c no terminal. Ele execuratá as varreduras serial por linhas, serial por colunas, com uso de 1, 2, 3, ..., 10 threads por linhas e com 1, 2, 3, ..., 10 threads por colunas.
+
+Os resultados obtidos estarão dipostos em quatro pastas:
+- Tempos_Serial: apresenta os arquivos .txt com os tempos real e user para varredura serial por linhas e por colunas
+- Tempos_Thread: apresenta os arquivos .txt com os tempos real e user para a varredura serial de 1 a 10 threads cada
+- Imagens_Serial: apresenta as imagens editadas pelo processo serial de varredura da matriz RGB
+- Imagens_Thread: apresenta as imagens editadas pelos processos de varredura com uso de threads da matriz RGB
+
