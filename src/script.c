@@ -4,6 +4,27 @@
 int main(){
 	int i, j, k;
 	FILE *script;
+	
+	if((script = popen(" mkdir Tempos_Serial", "w")) == NULL){
+		perror("popen");
+		exit(1);
+	}
+	
+		if((script = popen(" mkdir Tempos_Thread", "w")) == NULL){
+		perror("popen");
+		exit(1);
+	}
+	
+	if((script = popen(" mkdir Imagens_Serial", "w")) == NULL){
+		perror("popen");
+		exit(1);
+	}	
+	
+	if((script = popen(" mkdir Imagens_Thread", "w")) == NULL){
+		perror("popen");
+		exit(1);
+	}
+	
 
 	printf("\033[0;34m     OPERANDO NO MODO SEQUENCIAL\033[0m\n\n");
 

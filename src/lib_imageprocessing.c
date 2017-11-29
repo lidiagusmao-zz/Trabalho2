@@ -15,7 +15,7 @@ pthread_mutex_t trava; //DEfine a existência de uma trava pra ser usada no mute
 
 imagem abrir_imagem(char *nome_do_arquivo) {
   FIBITMAP *bitmapIn;
-  int x, y;
+  int x, y, i, j;
   RGBQUAD color;
   imagem I;
 
@@ -34,8 +34,8 @@ imagem abrir_imagem(char *nome_do_arquivo) {
   I.g = malloc(sizeof(float) * x * y);
   I.b = malloc(sizeof(float) * x * y);
 
-   for (int i=0; i<x; i++) {
-     for (int j=0; j <y; j++) {
+   for (i=0; i<x; i++) {
+     for (j=0; j <y; j++) {
       int idx;
       FreeImage_GetPixelColor(bitmapIn, i, j, &color);
 
@@ -64,11 +64,12 @@ void liberar_imagem(imagem *I) {
 void salvar_imagem(char *nome_do_arquivo, imagem *I) {
   FIBITMAP *bitmapOut;
   RGBQUAD color;
+  int i, j;
 
   bitmapOut = FreeImage_Allocate(I->width, I->height, 24, 0, 0, 0);
 
-   for (int i=0; i<I->width; i++) {
-     for (int j=0; j<I->height; j++) {
+   for (i=0; i<I->width; i++) {
+     for (j=0; j<I->height; j++) {
       int idx;
 
       idx = i + (j*I->width);
